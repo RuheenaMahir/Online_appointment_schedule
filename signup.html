@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE JOBS - Sign up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h2>THE JOBS</h2>
+        </div>
+        <div class="navlinks">
+            <ul id="menulist">
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+                <li><a href="appointment.html">APPOINTMENT</a></li>
+                <li><a href="history.html">HISTORY</a></li>
+
+                <li><a href="profile.html">PROFILE</a></li>
+                <li><a href="contact.html"><button class="primary-btn" name="button">CALL US</button></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <a href="homepage.html"><button class="secondary-btn back">Back</button></a>
+
+    <section>
+        <h2 class="topic">Sign up form</h2>
+        <form onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td>Username : </td>
+                    <td><input type="text" id="username" required></td>
+                </tr>
+                <tr>
+                    <td>First name : </td>
+                    <td><input type="text" id="fname" placeholder="Brian" required></td>
+                </tr>
+                <tr>
+                    <td>Last name : </td>
+                    <td><input type="text" id="lname" placeholder="Adams" required></td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td><input type="email" id="email" placeholder="abc@example.com" required></td>
+                </tr>
+                <tr>
+                    <td>Phone : </td>
+                    <td><input type="tel" id="phone" placeholder="+94 7xxxxxxxx" required></td>
+                </tr>
+                <tr>
+                    <td>Job type : </td>
+                    <td>
+                        <select id="jobType" required style="width: 170px;">
+                            <option value="">Select</option>
+                            <!-- Add other job type options here -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password : </td>
+                    <td><input type="password" id="password" required></td>
+                </tr>
+                <tr>
+                    <td>Confirm password : </td>
+                    <td><input type="password" id="c_password" required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="primary-btn" value="Sign up">Sign up</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var jobType = document.getElementById('jobType').value;
+            var password = document.getElementById('password').value;
+            var c_password = document.getElementById('c_password').value;
+
+            // Check if all required fields are filled
+            if (username.trim() === '' || fname.trim() === '' || lname.trim() === '' || email.trim() === '' || phone.trim() === '' || jobType === '' || password.trim() === '' || c_password.trim() === '') {
+                alert('Please fill in all the required fields.');
+                return false; // Prevent form submission
+            }
+
+            // Check if password and confirm password match
+            if (password !== c_password) {
+                alert('Password and confirm password do not match.');
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+
+</html>

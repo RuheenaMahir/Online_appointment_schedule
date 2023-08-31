@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultant Profile - THE JOBS</title>
+    <link rel="stylesheet" href="consultant_profile.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h2>THE JOBS</h2>
+        </div>
+        <div class="navlinks">
+            <ul id="menulist">
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+                <li><a href="appointment.html">APPOINTMENT</a></li>
+                <li><a href="history.html">HISTORY</a></li>
+
+                <li><a href="profile.html">PROFILE</a></li>
+                <li><a href="contact.html"><button class="primary-btn" name="button">CALL US</button></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="topic">Consultant Profile</h2>
+        <form onsubmit="return updateProfile()">
+            <table>
+                <tr>
+                    <td>Name : </td>
+                    <td><input type="text" id="name" readonly></td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td><input type="email" id="email" readonly></td>
+                </tr>
+                <tr>
+                    <td>Contact Number : </td>
+                    <td><input type="tel" id="phone"></td>
+                </tr>
+                <tr>
+                    <td>Specialization : </td>
+                    <td><input type="text" id="specialization"></td>
+                </tr>
+                <tr>
+                    <td>Availability : </td>
+                    <td>
+                        <input type="text" id="availability">
+                        <small>Enter your availability schedule (e.g., Monday-Friday, 9 AM - 5 PM)</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="primary-btn">Update Profile</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <script>
+        // This is just a sample data for the consultant profile. You may fetch the actual data from the backend.
+        var consultantProfile = {
+            name: "John Doe",
+            email: "john.doe@example.com",
+            phone: "+94 712345678",
+            specialization: "IT Consultant",
+            availability: "Monday-Friday, 9 AM - 5 PM"
+        };
+
+        // Populate the form with consultant profile data
+        document.getElementById('name').value = consultantProfile.name;
+        document.getElementById('email').value = consultantProfile.email;
+        document.getElementById('phone').value = consultantProfile.phone;
+        document.getElementById('specialization').value = consultantProfile.specialization;
+        document.getElementById('availability').value = consultantProfile.availability;
+
+        function updateProfile() {
+            // You can add your backend API call here to update the consultant's profile data.
+            // For this example, we will just alert a success message.
+
+            // Get updated values from the form
+            var updatedPhone = document.getElementById('phone').value;
+            var updatedSpecialization = document.getElementById('specialization').value;
+            var updatedAvailability = document.getElementById('availability').value;
+
+            // Update the consultant profile object with the new values
+            consultantProfile.phone = updatedPhone;
+            consultantProfile.specialization = updatedSpecialization;
+            consultantProfile.availability = updatedAvailability;
+
+            // You may send the updated data to the backend here (AJAX request or similar).
+
+            alert("Profile updated successfully!");
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE JOBS - Job seekers login</title>
+    <link rel="stylesheet" href="job_log.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h2>THE JOBS</h2>
+        </div>
+        <div class="navlinks">
+            <ul id="menulist">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+                <li><a href="appointment.html">APPOINTMENT</a></li>
+                <li><a href="history.html">HISTORY</a></li>
+
+                <li><a href="profile.html">PROFILE</a></li>
+                <li><a href="contact.html"><button class="primary-btn" name="button">CALL US</button></a></li>
+            </ul>
+        </div>
+    </header>
+    <a href="login.html"><button class="secondary-btn back">Back</button></a>
+    <section>
+        <h2 class="topic">Login form</h2>
+        <form onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td>Username : </td>
+                    <td><input type="text" id="username"></td>
+                </tr>
+                <tr>
+                    <td>Password : </td>
+                    <td><input type="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" class="primary-btn">Login</button></td>
+                    <td><button class="secondary-btn">Forgot password</button></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Check if the username and password fields are not empty
+            if (username.trim() === '' || password.trim() === '') {
+                alert('Please fill in both username and password.');
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+
+</html>

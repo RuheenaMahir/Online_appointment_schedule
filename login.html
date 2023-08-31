@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE JOBS</title>
+    <link rel="stylesheet" href="stylesheet1.css">
+    <style>
+        /*header*/
+body{
+    font-family: 'Poppins', sans-serif;
+}
+h1, h2{
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+header{
+    display: flex;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+}
+button {
+    border: none;
+    background: none;
+    outline: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.primary-btn{
+    padding: 15px 40px;
+    background: #9400D3;
+    font-weight: bold;
+    color: white;
+}
+.secondary-btn{
+    padding: 15px 40px;
+    background: none;
+    border: 2px solid #9400D3;
+    font-weight: bold;
+    color: #9400D3;
+}
+.container{
+    width: auto;
+    margin: 100px 0 100px 500px;
+}
+
+header{
+    height: 10vh;
+    line-height: 10vh;
+    padding: 0 20px;
+
+}
+
+header ul{
+    display: inline-block;
+}
+header ul li{
+    display: inline-block;
+}
+header ul li a {
+    color: #000;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+header ul li a:hover{
+    color: #9400D3;
+}
+header button{
+    padding: 13px 40px;
+}
+header {
+    background-color: 	#CBC3E3;
+    padding: 10px;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>THE JOBS</h2>
+            </div>
+            <div class="navlinks">
+                <ul id="menulist">
+                    <li><a href="homepage.html">HOME</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="appointment.html">APPOINTMENT</a></li>
+                    <li><a href="history.html">HISTORY</a></li>
+
+                    <li><a href="profile.html">PROFILE</a></li>
+                    <li><a href="contact.html"><button class="primary-btn" name="button">CALL US</button></a></li>
+                </ul>
+               
+            </div>
+    </header>
+    <a href="homepage.html"><button class="secondary-btn" value="Back">Back</button></a>
+    <section class="container">
+        <a href="consultant_log.html"><button class="primary-btn">Log in as a consultant</button></a>
+        <a href="job_log.html"><button class="secondary-btn">Log in as a job seeker</button></a>
+    </section>
+    <a href="admin_log.html" style="font-size:x-small ; text-align: center;"><p>Admin login</p></a>
+</body>
+</html>

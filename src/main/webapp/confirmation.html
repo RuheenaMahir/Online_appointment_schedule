@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation - THE JOBS</title>
+    <link rel="stylesheet" href="confirmation.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h2>THE JOBS</h2>
+        </div>
+        <!-- No need for navigation links on this page -->
+    </header>
+
+    <div class="container">
+        <section class="content">
+            <h1>Appointment Confirmation</h1>
+
+            <script>
+                // Function to get URL parameters by name
+                function getURLParameter(name) {
+                    var urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get(name);
+                }
+
+                // Retrieve the appointment details from URL parameters
+                var date = getURLParameter('date');
+                var time = getURLParameter('time');
+                var consultantName = getURLParameter('consultantName');
+                var jobSeekerName = getURLParameter('jobSeekerName');
+                // You can add more appointment details here based on your implementation
+            </script>
+
+            <!-- Displaying the appointment details -->
+            <p><strong>Appointment Date:</strong> <script>document.write(date);</script></p>
+            <p><strong>Appointment Time:</strong> <script>document.write(time);</script></p>
+            <p><strong>Consultant:</strong> <script>document.write(consultantName);</script></p>
+            <p><strong>Job Seeker:</strong> <script>document.write(jobSeekerName);</script></p>
+            <!-- You can add more details here -->
+
+            <p>Thank you for scheduling an appointment with us. Your appointment has been confirmed. If you have any
+                questions or need to make any changes, please don't hesitate to contact us.</p>
+
+            <a href="index.html">Back to Homepage</a>
+        </section>
+    </div>
+</body>
+
+</html>

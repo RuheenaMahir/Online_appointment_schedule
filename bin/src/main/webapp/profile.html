@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Profile - THE JOBS</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h2>THE JOBS</h2>
+        </div>
+        <div class="navlinks">
+            <ul id="menulist">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+                <li><a href="appointment.html">APPOINTMENT</a></li>
+                <li><a href="history.html">HISTORY</a></li>
+
+                <li><a href="profile.html">PROFILE</a></li>
+                <li><a href="contact.html"><button class="primary-btn" name="button">CALL US</button></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="topic">Job Seeker Profile</h2>
+        <form onsubmit="return updateProfile()">
+            <table>
+                <tr>
+                    <td>Name : </td>
+                    <td><input type="text" id="name" readonly></td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td><input type="email" id="email" readonly></td>
+                </tr>
+                <tr>
+                    <td>Contact Number : </td>
+                    <td><input type="tel" id="phone"></td>
+                </tr>
+                <tr>
+                    <td>Skills : </td>
+                    <td><input type="text" id="skills"></td>
+                </tr>
+                <tr>
+                    <td>Preferred Job Type : </td>
+                    <td>
+                        <input type="text" id="jobType">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="primary-btn">Update Profile</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <script>
+        // This is just a sample data for the job seeker profile. You may fetch the actual data from the backend.
+        var jobSeekerProfile = {
+            name: "Jane Doe",
+            email: "jane.doe@example.com",
+            phone: "+94 712345678",
+            skills: "Web Development, Communication, Teamwork",
+            jobType: "Software Engineer"
+        };
+
+        // Populate the form with job seeker profile data
+        document.getElementById('name').value = jobSeekerProfile.name;
+        document.getElementById('email').value = jobSeekerProfile.email;
+        document.getElementById('phone').value = jobSeekerProfile.phone;
+        document.getElementById('skills').value = jobSeekerProfile.skills;
+        document.getElementById('jobType').value = jobSeekerProfile.jobType;
+
+        function updateProfile() {
+            // You can add your backend API call here to update the job seeker's profile data.
+            // For this example, we will just alert a success message.
+
+            // Get updated values from the form
+            var updatedPhone = document.getElementById('phone').value;
+            var updatedSkills = document.getElementById('skills').value;
+            var updatedJobType = document.getElementById('jobType').value;
+
+            // Update the job seeker profile object with the new values
+            jobSeekerProfile.phone = updatedPhone;
+            jobSeekerProfile.skills = updatedSkills;
+            jobSeekerProfile.jobType = updatedJobType;
+
+            // You may send the updated data to the backend here (AJAX request or similar).
+
+            alert("Profile updated successfully!");
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+
+</html>
